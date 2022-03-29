@@ -43,27 +43,34 @@ The total_summary only shows a variance of 62.29356 which is less than 100.  Ind
 
 # Deliverable 3: T-Tests on Suspension Coils
 
-![Graph 3a. Results](resources/Deliverable3a.png)
-![Graph 3b. Results](resources/Deliverable3b.png)
-![Graph 3c. Results](resources/Deliverable3c.png)
-![Graph 3d. Results](resources/Deliverable3d.png)
-
 ## Deliverable 3 Written Summary
 
 ## T-Tests on Suspension Coils
 
 ### Summary for All
-For the summary of the t-test results across all manufacturing lots we have a p-value = 1,Assuming our significance level was the common 0.05 percent, our p-value is above our significance level. Therefore, we do not have sufficient evidence to reject the null hypothesis, and we would state that the two means are statistically similar.
+Code: t.test(Suspension_Coil_df$PSI,mu=mean(Suspension_Coil_df$PSI))
+
+For the summary of the t-test results across all manufacturing lots we have a mean of 1498.78.(The screeshots below displays mean of 1498.78)
+![Graph 3a. Results](resources/Deliverable3a.png)
+
 
 ### Lot1
-Lot1 has a p-value = 1.568e-11 aka 0.00000000001568. Assuming our significance level was the common 0.05 percent, our p-value is below our significance level.  Therefore we do have sufficient evidence to reject the null hypothesis, and we would state that the two means are not statistically similar.
+Code: t.test(subset(Suspension_Coil_df$PSI,Suspension_Coil_df$Manufacturing_Lot == "Lot1"),mu=mean(Suspension_Coil_df$PSI))
+
+Lot1 has a mean value of 1500(The screeshots below displays mean of 1500)
+![Graph 3b. Results](resources/Deliverable3b.png)
 
 ### Lot2
-Lot2 has a p-value = 0.0005911. Assuming our significance level was the common 0.05 percent, our p-value is below our significance level.  Therefore we do have sufficient evidence to reject the null hypothesis, and we would state that the two means are not statistically similar.
+Code: t.test(subset(Suspension_Coil_df$PSI,Suspension_Coil_df$Manufacturing_Lot == "Lot2"),mu=mean(Suspension_Coil_df$PSI))
+
+Lot2 has a mean value of 1500.2(The screeshots below displays mean of 1500.2)
+![Graph 3c. Results](resources/Deliverable3c.png)
 
 ### Lot3
-Lot3 has a p-value = 0.1589. Assuming our significance level was the common 0.05 percent, our p-value is above our significance level. Therefore, we do not have sufficient evidence to reject the null hypothesis, and we would state that the two means are statistically similar.
+Code: t.test(subset(Suspension_Coil_df$PSI,Suspension_Coil_df$Manufacturing_Lot == "Lot3"),mu=mean(Suspension_Coil_df$PSI))
 
+Lot3 has a mean value of 1496.14(The screeshots below displays mean of 1496.14)
+![Graph 3d. Results](resources/Deliverable3d.png)
 
 # Deliverable 4: Design a Study Comparing the MechaCar to the Competition
 
